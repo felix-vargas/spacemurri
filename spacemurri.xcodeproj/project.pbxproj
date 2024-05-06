@@ -14,6 +14,8 @@
 		070E18D82BE94C4900D0B172 /* spacemurriTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 070E18D72BE94C4900D0B172 /* spacemurriTests.swift */; };
 		070E18E22BE94C4900D0B172 /* spacemurriUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 070E18E12BE94C4900D0B172 /* spacemurriUITests.swift */; };
 		070E18E42BE94C4900D0B172 /* spacemurriUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 070E18E32BE94C4900D0B172 /* spacemurriUITestsLaunchTests.swift */; };
+		070E18F32BE94E6800D0B172 /* spacemurriFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 070E18F22BE94E6800D0B172 /* spacemurriFunctions.swift */; };
+		070E18F52BE950A700D0B172 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 070E18F42BE950A700D0B172 /* AppDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +47,8 @@
 		070E18DD2BE94C4900D0B172 /* spacemurriUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = spacemurriUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		070E18E12BE94C4900D0B172 /* spacemurriUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = spacemurriUITests.swift; sourceTree = "<group>"; };
 		070E18E32BE94C4900D0B172 /* spacemurriUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = spacemurriUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		070E18F22BE94E6800D0B172 /* spacemurriFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = spacemurriFunctions.swift; sourceTree = "<group>"; };
+		070E18F42BE950A700D0B172 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +104,8 @@
 				070E18C92BE94C4900D0B172 /* Assets.xcassets */,
 				070E18CB2BE94C4900D0B172 /* spacemurri.entitlements */,
 				070E18CC2BE94C4900D0B172 /* Preview Content */,
+				070E18F22BE94E6800D0B172 /* spacemurriFunctions.swift */,
+				070E18F42BE950A700D0B172 /* AppDelegate.swift */,
 			);
 			path = spacemurri;
 			sourceTree = "<group>";
@@ -259,7 +265,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				070E18F52BE950A700D0B172 /* AppDelegate.swift in Sources */,
 				070E18C82BE94C4800D0B172 /* ContentView.swift in Sources */,
+				070E18F32BE94E6800D0B172 /* spacemurriFunctions.swift in Sources */,
 				070E18C62BE94C4800D0B172 /* spacemurriApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

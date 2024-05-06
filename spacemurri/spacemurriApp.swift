@@ -1,17 +1,14 @@
-//
-//  spacemurriApp.swift
-//  spacemurri
-//
-//  Created by Felix Vargas on 06-05-24.
-//
-
 import SwiftUI
-
+  
 @main
-struct spacemurriApp: App {
+struct SpaceMurriApp: App {
+    // Register the AppDelegate for the NSApplicationDelegate
+    @NSApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
+  
     var body: some Scene {
-        WindowGroup {
-            ContentView()
+        // Provide an empty scene
+        Settings {
+            EmptyView()
         }
     }
 }
