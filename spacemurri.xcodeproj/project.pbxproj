@@ -16,7 +16,8 @@
 		070E18E42BE94C4900D0B172 /* spacemurriUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 070E18E32BE94C4900D0B172 /* spacemurriUITestsLaunchTests.swift */; };
 		070E18F32BE94E6800D0B172 /* spacemurriFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 070E18F22BE94E6800D0B172 /* spacemurriFunctions.swift */; };
 		070E18F52BE950A700D0B172 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 070E18F42BE950A700D0B172 /* AppDelegate.swift */; };
-		070E18F92BE988FB00D0B172 /* test.png in Resources */ = {isa = PBXBuildFile; fileRef = 070E18F82BE988FB00D0B172 /* test.png */; };
+		070E18FC2BE99E6800D0B172 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 070E18FB2BE99E6800D0B172 /* README.md */; };
+		070E19012BE99EFC00D0B172 /* banner.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 070E19002BE99EFC00D0B172 /* banner.jpeg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,8 +51,8 @@
 		070E18E32BE94C4900D0B172 /* spacemurriUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = spacemurriUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		070E18F22BE94E6800D0B172 /* spacemurriFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = spacemurriFunctions.swift; sourceTree = "<group>"; };
 		070E18F42BE950A700D0B172 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		070E18F82BE988FB00D0B172 /* test.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = test.png; path = ../../../Downloads/test.png; sourceTree = "<group>"; };
-		070E18FA2BE988FD00D0B172 /* test.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = test.png; sourceTree = "<group>"; };
+		070E18FB2BE99E6800D0B172 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		070E19002BE99EFC00D0B172 /* banner.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = banner.jpeg; path = ../../../../Downloads/banner.jpeg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,7 +83,8 @@
 		070E18B92BE94C4800D0B172 = {
 			isa = PBXGroup;
 			children = (
-				070E18F82BE988FB00D0B172 /* test.png */,
+				070E18FF2BE99EDD00D0B172 /* public */,
+				070E18FB2BE99E6800D0B172 /* README.md */,
 				070E18C42BE94C4800D0B172 /* spacemurri */,
 				070E18D62BE94C4900D0B172 /* spacemurriTests */,
 				070E18E02BE94C4900D0B172 /* spacemurriUITests */,
@@ -103,7 +105,6 @@
 		070E18C42BE94C4800D0B172 /* spacemurri */ = {
 			isa = PBXGroup;
 			children = (
-				070E18FA2BE988FD00D0B172 /* test.png */,
 				070E18C52BE94C4800D0B172 /* spacemurriApp.swift */,
 				070E18C72BE94C4800D0B172 /* ContentView.swift */,
 				070E18C92BE94C4900D0B172 /* Assets.xcassets */,
@@ -138,6 +139,14 @@
 				070E18E32BE94C4900D0B172 /* spacemurriUITestsLaunchTests.swift */,
 			);
 			path = spacemurriUITests;
+			sourceTree = "<group>";
+		};
+		070E18FF2BE99EDD00D0B172 /* public */ = {
+			isa = PBXGroup;
+			children = (
+				070E19002BE99EFC00D0B172 /* banner.jpeg */,
+			);
+			path = public;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -245,8 +254,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				070E18CE2BE94C4900D0B172 /* Preview Assets.xcassets in Resources */,
+				070E19012BE99EFC00D0B172 /* banner.jpeg in Resources */,
 				070E18CA2BE94C4900D0B172 /* Assets.xcassets in Resources */,
-				070E18F92BE988FB00D0B172 /* test.png in Resources */,
+				070E18FC2BE99E6800D0B172 /* README.md in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
