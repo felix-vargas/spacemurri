@@ -39,11 +39,12 @@ For the moment being the project is a WIP to get it built under an official Appl
 
 - NS = Not Started
 - WIP = Work In Progress
+- SOLVED = The feature wasn't necessary because a way or manner of doing it automatically was found
 
 | Feature | Description                                  | Status  |
 |-------------|----------------------------------------------|---------|
 | Pre compiled   | Final step to release as an official app | NS |
 | Config menu | Menu to display different options and configurations for customize your space watcher bar | WIP |
-| Config option for display order | Feature to allow the user to choose in which order are the spaces ( multiple displays don't follow the ID order of how they are setted phisically)   | WIP    |
+| Config option for display order | Feature to allow the user to choose in which order are the spaces ( multiple displays don't follow the ID order of how they are setted phisically)   | SOLVED    |
 | Config for choosing colors | Feature that allows you to choose how each state of the space is represented in colors | NS |
 | Config for changing separator icon | Choose which char is used to represent the separator for different displays | NS |

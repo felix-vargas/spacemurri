@@ -17,7 +17,6 @@
 		070E18F32BE94E6800D0B172 /* spacemurriFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 070E18F22BE94E6800D0B172 /* spacemurriFunctions.swift */; };
 		070E18F52BE950A700D0B172 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 070E18F42BE950A700D0B172 /* AppDelegate.swift */; };
 		070E18FC2BE99E6800D0B172 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 070E18FB2BE99E6800D0B172 /* README.md */; };
-		070E19012BE99EFC00D0B172 /* banner.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 070E19002BE99EFC00D0B172 /* banner.jpeg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,7 +51,6 @@
 		070E18F22BE94E6800D0B172 /* spacemurriFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = spacemurriFunctions.swift; sourceTree = "<group>"; };
 		070E18F42BE950A700D0B172 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		070E18FB2BE99E6800D0B172 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
-		070E19002BE99EFC00D0B172 /* banner.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = banner.jpeg; path = ../../../../Downloads/banner.jpeg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -144,7 +142,6 @@
 		070E18FF2BE99EDD00D0B172 /* public */ = {
 			isa = PBXGroup;
 			children = (
-				070E19002BE99EFC00D0B172 /* banner.jpeg */,
 			);
 			path = public;
 			sourceTree = "<group>";
@@ -254,7 +251,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				070E18CE2BE94C4900D0B172 /* Preview Assets.xcassets in Resources */,
-				070E19012BE99EFC00D0B172 /* banner.jpeg in Resources */,
 				070E18CA2BE94C4900D0B172 /* Assets.xcassets in Resources */,
 				070E18FC2BE99E6800D0B172 /* README.md in Resources */,
 			);
@@ -446,6 +442,8 @@
 				DEVELOPMENT_ASSET_PATHS = "\"spacemurri/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = spacemurri;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.developer-tools";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -464,10 +462,10 @@
 				PRODUCT_BUNDLE_IDENTIFIER = mamurri.spacemurri;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SUPPORTED_PLATFORMS = macosx;
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -482,6 +480,8 @@
 				DEVELOPMENT_ASSET_PATHS = "\"spacemurri/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = spacemurri;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.developer-tools";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -500,10 +500,10 @@
 				PRODUCT_BUNDLE_IDENTIFIER = mamurri.spacemurri;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SUPPORTED_PLATFORMS = macosx;
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};

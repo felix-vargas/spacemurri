@@ -14,16 +14,25 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         let display:Int
     }
     
+    struct Frame {
+        let x: Float
+        let y: Float
+        let w: Float
+        let h: Float
+    }
+    
     struct Display {
         let index: Int
-        let spaces: [Int]  // Only store space indexes here
+        let spaces: [Int]
+        let frame: Frame
+        let has_focus: Bool
     }
     
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         statusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.variableLength)
           
         refreshSpaces()
-        setupRefreshTimer(interval: 1)
+        setupRefreshTimer(interval: 0.5)
         NSApp.setActivationPolicy(.accessory)
     }
       
@@ -60,51 +69,24 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
     
     
-    func sortDisplays(displays: [Display], sortOrder: [Int]?) -> [Display] {
-        let indexPriority = sortOrder ?? []
-
+    func sortDisplays(displays: [Display]) -> [Display] {
         return displays.sorted { (a, b) -> Bool in
-            // Determine position based on custom sort order
-            let posA = indexPriority.firstIndex(of: a.index) ?? Int.max
-            let posB = indexPriority.firstIndex(of: b.index) ?? Int.max
-            
-            // If positions are found in the sort order, use them; otherwise, fall back to natural order
-            if posA != Int.max || posB != Int.max {
-                return posA < posB
-            }
-            
-            // Default natural sorting by index
-            return a.index < b.index
+            return a.frame.x < b.frame.x
         }
     }
-    
 
     
     @objc func refreshSpaces() {
-
         let display = shell("yabai -m query --displays");
         let parsedDisplays = parseDisplays(fromOutput: display)
-        let sortedParsedDisplays = sortDisplays(displays: parsedDisplays, sortOrder: [2,3,1])
-        
-         let yabaiOutput = shell("yabai -m query --spaces")
-         let spaces = parseSpaces(fromOutput: yabaiOutput)
+        let sortedParsedDisplays = sortDisplays(displays: parsedDisplays)
+        let yabaiOutput = shell("yabai -m query --spaces")
+        let spaces = parseSpaces(fromOutput: yabaiOutput)
         updateStatusItem(withSpaces: spaces, withDisplays: sortedParsedDisplays)
     }
     
     
-    
-    func imageFromEmoji(_ emoji: String, size: CGFloat) -> NSImage? {
-        let attributes = [NSAttributedString.Key.font: NSFont.systemFont(ofSize: size)]
-        let attributedString = NSAttributedString(string: emoji, attributes: attributes)
-        
-        let size = attributedString.size()
-        let image = NSImage(size: size)
-        image.lockFocus()
-        attributedString.draw(at: NSPoint(x: 0, y: 0))
-        image.unlockFocus()
-        
-        return image
-    }
+
     
 
     
@@ -119,13 +101,23 @@ class AppDelegate: NSObject, NSApplicationDelegate {
                     if let space = spaces.first(where: { $0.index == spaceIndex }) {
                         let title = "\(space.index) "
                         let attributes: [NSAttributedString.Key: Any]
-
-                        if space.isFocused {
-                            attributes = [.foregroundColor: NSColor.focusSpace]
-                        } else if space.hasOpenWindows {
-                            attributes = [.foregroundColor: NSColor.activeSpace]
-                        } else {
-                            attributes = [.foregroundColor: NSColor.inactiveSpace]
+                        
+                        if display.has_focus{
+                            if space.isFocused {
+                                attributes = [.foregroundColor: NSColor.focusSpace]
+                            } else if space.hasOpenWindows {
+                                attributes = [.foregroundColor: NSColor.activeSpace]
+                            } else {
+                                attributes = [.foregroundColor: NSColor.inactiveSpace]
+                            }
+                        }else{
+                            if space.isFocused {
+                                attributes = [.foregroundColor: NSColor.focusFocusSpace]
+                            } else if space.hasOpenWindows {
+                                attributes = [.foregroundColor: NSColor.activeFocusSpace]
+                            } else {
+                                attributes = [.foregroundColor: NSColor.inactiveFocusSpace]
+                            }
                         }
 
                         let attributedTitle = NSAttributedString(string: title, attributes: attributes)
@@ -176,7 +168,17 @@ class AppDelegate: NSObject, NSApplicationDelegate {
                     for displayDict in jsonArray {
                         if let displayID = displayDict["id"] as? Int {
                             let displaySpaces = displayDict["spaces"] as? [Int] ?? [0]
-                            displays.append(Display(index:displayID, spaces:displaySpaces))
+                            var DisplayFrame = Frame(x: 0, y: 0, w: 0, h: 0)
+                            if let frameDict = displayDict["frame"] as? [String: Float] {
+                                DisplayFrame = Frame(
+                                    x: frameDict["x"] ?? 0,
+                                    y: frameDict["y"] ?? 0,
+                                    w: frameDict["w"] ?? 0,
+                                    h: frameDict["h"] ?? 0
+                                )
+                            }
+                            let display_has_focus = displayDict["has-focus"] as? Bool ?? false
+                            displays.append(Display(index:displayID, spaces:displaySpaces, frame: DisplayFrame, has_focus:display_has_focus ))
                         }
                     }
                 }
