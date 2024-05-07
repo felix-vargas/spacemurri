@@ -31,6 +31,10 @@ For the moment being the project is a WIP to get it built under an official Appl
 3. ```Build```
 
 
+# Screenshots
+
+![use](./public/use.gif)
+
 # WIP
 
 - NS = Not Started
